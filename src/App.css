@@ -1,0 +1,61 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+/* CSS Variables for dynamic styling */
+:root {
+  --font-family: 'Inter', sans-serif;
+  --font-weight: 400;
+  --font-size: 16px;
+  --button-border-radius: 8px;
+  --button-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --button-alignment: center;
+  --button-bg-color: #3b82f6;
+  --button-text-color: #ffffff;
+  --gallery-spacing: 16px;
+  --gallery-border-radius: 8px;
+  --card-corner-radius: 12px;
+  --container-padding: 24px;
+  --section-bg-color: #ffffff;
+  --stroke-color: #e5e7eb;
+  --stroke-weight: 1px;
+}
+
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  background-color: #f9fafb;
+  color: #1f2937;
+  line-height: 1.6;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  :root {
+    --container-padding: 16px;
+    --font-size: 14px;
+  }
+}
