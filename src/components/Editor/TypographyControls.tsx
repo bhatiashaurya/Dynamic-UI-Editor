@@ -37,6 +37,13 @@ const Select = styled.select`
   border-radius: 6px;
   font-size: 14px;
   background: white;
+  color: #1f2937;
+  cursor: pointer;
+  
+  option {
+    color: #1f2937;
+    background: white;
+  }
   
   &:focus {
     outline: none;
