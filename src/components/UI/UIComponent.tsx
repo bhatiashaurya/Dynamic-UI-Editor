@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useUIStore } from '../../store/useUIStore';
-import { ShoppingCart, RotateCw, ZoomIn, Maximize2, Plus, Minus, ChevronDown, Eye } from 'lucide-react';
+import { RotateCw, Maximize2, Plus, Minus, ChevronDown, Eye } from 'lucide-react';
 
 const Container = styled.div`
   font-family: var(--font-family, 'Inter');
@@ -56,31 +56,31 @@ const ProductViewport = styled.div`
 `;
 
 const ProductModel = styled.div<{ $color: string }>`
-  width: 520px;
-  height: 340px;
+  width: 683px;
+  height: 487px;
   background: ${props => props.$color};
-  border-radius: 12px;
+  border-radius: 16px;
   position: relative;
   box-shadow: 
-    0 50px 100px rgba(0, 0, 0, 0.25),
-    0 20px 40px rgba(0, 0, 0, 0.15);
-  transform: perspective(1400px) rotateY(-18deg) rotateX(8deg);
+    0 60px 120px rgba(0, 0, 0, 0.3),
+    0 30px 60px rgba(0, 0, 0, 0.2);
+  transform: perspective(1600px) rotateY(-20deg) rotateX(6deg);
   
   /* Cabinet body with panels */
   &::before {
     content: '';
     position: absolute;
-    top: 10%;
-    left: 6%;
-    right: 6%;
-    bottom: 18%;
+    top: 8%;
+    left: 5%;
+    right: 5%;
+    bottom: 15%;
     background: linear-gradient(90deg, 
       ${props => props.$color}e6 0%, 
       ${props => props.$color}99 50%, 
       ${props => props.$color}e6 100%);
-    border-radius: 8px;
+    border-radius: 10px;
     border: 2px solid rgba(0,0,0,0.2);
-    box-shadow: inset 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: inset 0 3px 15px rgba(0,0,0,0.12);
   }
   
   /* Cabinet legs */
@@ -88,52 +88,52 @@ const ProductModel = styled.div<{ $color: string }>`
     content: '';
     position: absolute;
     bottom: 0;
-    left: 12%;
-    width: 8px;
-    height: 18%;
+    left: 10%;
+    width: 10px;
+    height: 15%;
     background: linear-gradient(180deg, #5a4a3a 0%, #3a2a1a 100%);
-    border-radius: 2px;
+    border-radius: 3px;
     box-shadow: 
-      0 0 8px rgba(0,0,0,0.3),
-      72% 0 0 #3a2a1a,
-      144% 0 0 #3a2a1a,
-      216% 0 0 #3a2a1a;
+      0 0 10px rgba(0,0,0,0.4),
+      75% 0 0 #3a2a1a,
+      150% 0 0 #3a2a1a,
+      225% 0 0 #3a2a1a;
   }
 `;
 
 const CabinetDoors = styled.div<{ $color: string }>`
   position: absolute;
-  top: 12%;
-  left: 7.5%;
-  width: 42%;
-  height: 68%;
+  top: 10%;
+  left: 6.5%;
+  width: 43%;
+  height: 72%;
   background: ${props => props.$color}cc;
-  border-radius: 6px;
-  border: 1px solid rgba(0,0,0,0.25);
-  box-shadow: 2px 0 8px rgba(0,0,0,0.15);
+  border-radius: 8px;
+  border: 1.5px solid rgba(0,0,0,0.25);
+  box-shadow: 3px 0 12px rgba(0,0,0,0.18);
   
   &::before {
     content: '';
     position: absolute;
     top: 50%;
-    right: 8%;
-    width: 6px;
-    height: 28px;
+    right: 7%;
+    width: 8px;
+    height: 36px;
     background: linear-gradient(90deg, #d4af37 0%, #aa8c2e 100%);
-    border-radius: 2px;
+    border-radius: 3px;
     transform: translateY(-50%);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.25);
   }
   
   &::after {
     content: '';
     position: absolute;
-    top: 12%;
-    left: 8%;
-    right: 8%;
-    bottom: 12%;
-    border: 1px solid rgba(0,0,0,0.1);
-    border-radius: 4px;
+    top: 10%;
+    left: 6%;
+    right: 6%;
+    bottom: 10%;
+    border: 1.5px solid rgba(0,0,0,0.12);
+    border-radius: 5px;
   }
 `;
 
