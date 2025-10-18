@@ -38,10 +38,11 @@ const PreviewContent = styled.div`
 `;
 
 const PreviewInterface: React.FC = () => {
-  const { config } = useUIStore();
+  const config = useUIStore((state) => state.config);
 
   // Apply CSS variables whenever config changes
   useEffect(() => {
+    console.log('Preview: Config changed, applying CSS variables');
     applyCSSVariables(config);
   }, [config]);
 

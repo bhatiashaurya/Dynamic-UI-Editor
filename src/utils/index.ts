@@ -52,9 +52,11 @@ export const generateCSSVariables = (config: UIConfig): Record<string, string> =
 // Apply CSS variables to document root
 export const applyCSSVariables = (config: UIConfig): void => {
   const variables = generateCSSVariables(config);
+  console.log('Applying CSS variables:', variables);
   Object.entries(variables).forEach(([property, value]) => {
     document.documentElement.style.setProperty(property, value);
   });
+  console.log('CSS variables applied to :root');
 };
 
 // Download JSON configuration

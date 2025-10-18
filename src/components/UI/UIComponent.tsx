@@ -32,7 +32,7 @@ const ThumbnailGallery = styled.div`
 const Thumbnail = styled.button<{ $active?: boolean }>`
   width: 56px;
   height: 56px;
-  border-radius: 8px;
+  border-radius: var(--gallery-border-radius, 8px);
   border: 2px solid ${props => props.$active ? '#3b82f6' : '#e5e7eb'};
   background: #f9fafb;
   cursor: pointer;
@@ -329,7 +329,7 @@ const ColorGrid = styled.div`
 const ColorSwatch = styled.button<{ $color: string; $selected?: boolean }>`
   width: 100%;
   aspect-ratio: 1;
-  border-radius: 50%;
+  border-radius: var(--gallery-border-radius, 50%);
   background-color: ${props => props.$color};
   border: 2px solid ${props => props.$selected ? '#1a1a1a' : 'transparent'};
   cursor: pointer;
@@ -347,7 +347,7 @@ const ColorSwatch = styled.button<{ $color: string; $selected?: boolean }>`
     content: '';
     position: absolute;
     inset: 4px;
-    border-radius: 50%;
+    border-radius: var(--gallery-border-radius, 50%);
     background: linear-gradient(135deg, transparent 0%, rgba(255,255,255,0.2) 100%);
   }
 `;
@@ -390,7 +390,8 @@ const OriginalPrice = styled.div`
 
 const AddToCartButton = styled.button`
   width: 100%;
-  background: var(--button-bg-color, linear-gradient(135deg, #ef4444 0%, #dc2626 100%));
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  background: var(--button-bg-color);
   color: var(--button-text-color, white);
   border: none;
   border-radius: var(--button-border-radius, 8px);
