@@ -158,7 +158,7 @@ const ViewControls = styled.div`
 const ControlButton = styled.button<{ $variant?: 'text' }>`
   height: 40px;
   padding: ${props => props.$variant === 'text' ? '0 16px' : '0 12px'};
-  border-radius: 20px;
+  border-radius: var(--button-border-radius, 20px);
   background: white;
   border: 1px solid #d1d5db;
   display: flex;
@@ -168,9 +168,10 @@ const ControlButton = styled.button<{ $variant?: 'text' }>`
   cursor: pointer;
   transition: all 0.2s;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  font-size: 14px;
+  font-size: calc(var(--font-size, 16px) * 0.875);
+  font-family: var(--font-family, 'Inter');
+  font-weight: var(--font-weight, 500);
   color: #374151;
-  font-weight: 500;
   
   &:hover {
     background: #f9fafb;
@@ -220,11 +221,12 @@ const SidebarPanel = styled.div`
 `;
 
 const ProductTitle = styled.h2`
-  font-size: 24px;
-  font-weight: 600;
+  font-size: calc(var(--font-size, 16px) * 1.5);
+  font-weight: var(--font-weight, 600);
   margin: 0;
   color: #1a1a1a;
   line-height: 1.3;
+  font-family: var(--font-family, 'Inter');
 `;
 
 const Divider = styled.div`
@@ -237,8 +239,9 @@ const CustomizeSection = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 15px;
-  font-weight: 500;
+  font-size: calc(var(--font-size, 16px) * 0.9375);
+  font-weight: var(--font-weight, 500);
+  font-family: var(--font-family, 'Inter');
   color: #1a1a1a;
   padding-bottom: 12px;
 `;
@@ -262,20 +265,23 @@ const OptionNumber = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
-  font-size: 14px;
+  font-weight: var(--font-weight, 600);
+  font-size: calc(var(--font-size, 16px) * 0.875);
+  font-family: var(--font-family, 'Inter');
   color: #374151;
 `;
 
 const OptionTitle = styled.div`
-  font-size: 14px;
-  font-weight: 500;
+  font-size: calc(var(--font-size, 16px) * 0.875);
+  font-weight: var(--font-weight, 500);
+  font-family: var(--font-family, 'Inter');
   color: #1a1a1a;
   flex: 1;
 `;
 
 const OptionValue = styled.div`
-  font-size: 13px;
+  font-size: calc(var(--font-size, 16px) * 0.8125);
+  font-family: var(--font-family, 'Inter');
   color: #6b7280;
 `;
 
@@ -284,12 +290,14 @@ const Dropdown = styled.button`
   padding: 12px 16px;
   background: ${props => props.disabled ? '#fef3f2' : '#fafafa'};
   border: 1px solid #e5e7eb;
-  border-radius: 8px;
+  border-radius: var(--button-border-radius, 8px);
   display: flex;
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
-  font-size: 14px;
+  font-size: calc(var(--font-size, 16px) * 0.875);
+  font-family: var(--font-family, 'Inter');
+  font-weight: var(--font-weight, 400);
   color: #1a1a1a;
   transition: all 0.2s;
   
@@ -303,8 +311,9 @@ const MaterialSection = styled.div`
 `;
 
 const MaterialLabel = styled.div`
-  font-size: 11px;
-  font-weight: 600;
+  font-size: calc(var(--font-size, 16px) * 0.6875);
+  font-weight: var(--font-weight, 600);
+  font-family: var(--font-family, 'Inter');
   color: #9ca3af;
   margin-bottom: 10px;
   letter-spacing: 0.5px;
@@ -313,7 +322,7 @@ const MaterialLabel = styled.div`
 const ColorGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 10px;
+  gap: var(--gallery-spacing, 10px);
   margin-bottom: 16px;
 `;
 
@@ -350,7 +359,9 @@ const PriceSection = styled.div`
 `;
 
 const PriceLabel = styled.div`
-  font-size: 14px;
+  font-size: calc(var(--font-size, 16px) * 0.875);
+  font-family: var(--font-family, 'Inter');
+  font-weight: var(--font-weight, 400);
   color: #6b7280;
   margin-bottom: 8px;
 `;
@@ -363,30 +374,33 @@ const PriceContainer = styled.div`
 `;
 
 const CurrentPrice = styled.div`
-  font-size: 28px;
-  font-weight: 700;
+  font-size: calc(var(--font-size, 16px) * 1.75);
+  font-weight: var(--font-weight, 700);
+  font-family: var(--font-family, 'Inter');
   color: #1a1a1a;
 `;
 
 const OriginalPrice = styled.div`
-  font-size: 18px;
+  font-size: calc(var(--font-size, 16px) * 1.125);
+  font-family: var(--font-family, 'Inter');
+  font-weight: var(--font-weight, 400);
   color: #9ca3af;
   text-decoration: line-through;
 `;
 
 const AddToCartButton = styled.button`
   width: 100%;
-  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
-  color: white;
+  background: var(--button-bg-color, linear-gradient(135deg, #ef4444 0%, #dc2626 100%));
+  color: var(--button-text-color, white);
   border: none;
-  border-radius: 8px;
+  border-radius: var(--button-border-radius, 8px);
   padding: 16px 24px;
   font-family: var(--font-family, 'Inter');
-  font-weight: 600;
-  font-size: 16px;
+  font-weight: var(--font-weight, 600);
+  font-size: calc(var(--font-size, 16px) * 1);
   cursor: pointer;
   transition: all 0.2s ease;
-  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+  box-shadow: var(--button-shadow, 0 4px 12px rgba(239, 68, 68, 0.3));
 
   &:hover {
     transform: translateY(-2px);
