@@ -419,7 +419,7 @@ interface UIComponentProps {
 
 const UIComponent: React.FC<UIComponentProps> = ({ layout }) => {
   const { config } = useUIStore();
-  const currentLayout = layout || config.currentLayout;
+  // const currentLayout = layout || config.currentLayout;
   const [selectedColor, setSelectedColor] = React.useState('#8B6F47');
   const [activeThumb, setActiveThumb] = React.useState(0);
 

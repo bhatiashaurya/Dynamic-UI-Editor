@@ -42,7 +42,16 @@ const PreviewInterface: React.FC = () => {
 
   // Apply CSS variables whenever config changes
   useEffect(() => {
-    console.log('Preview: Config changed, applying CSS variables');
+    console.log('Preview: Config changed, applying CSS variables', {
+      fontFamily: config.typography.fontFamily,
+      fontWeight: config.typography.fontWeight,
+      fontSize: config.typography.fontSize,
+      buttonBg: config.button.backgroundColor,
+      buttonText: config.button.textColor,
+      buttonRadius: config.button.borderRadius,
+      gallerySpacing: config.gallery.spacing,
+      galleryRadius: config.gallery.borderRadius,
+    });
     applyCSSVariables(config);
   }, [config]);
 
