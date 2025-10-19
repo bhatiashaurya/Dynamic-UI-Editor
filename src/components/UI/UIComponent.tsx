@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useUIStore } from '../../store/useUIStore';
+// import { useUIStore } from '../../store/useUIStore';
 import { RotateCw, Maximize2, Plus, Minus, ChevronDown, Eye } from 'lucide-react';
 
 const Container = styled.div`
@@ -417,8 +417,8 @@ interface UIComponentProps {
   layout?: 'layout1' | 'layout2';
 }
 
-const UIComponent: React.FC<UIComponentProps> = ({ layout }) => {
-  const { config } = useUIStore();
+const UIComponent: React.FC<UIComponentProps> = () => {
+  // const { config } = useUIStore();
   // const currentLayout = layout || config.currentLayout;
   const [selectedColor, setSelectedColor] = React.useState('#8B6F47');
   const [activeThumb, setActiveThumb] = React.useState(0);
